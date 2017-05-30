@@ -21,7 +21,7 @@
                             $.ajax({
                                 type: "POST",
                                 url:"MainServletController",   // this is my servlet
-                                data:JSON.stringify({"transaction":transaction,"username":username,"password":password}),
+                                data:JSON.stringify({"request":transaction,"username":username,"password":password}),
                                 dataType: "json",
                                 success: function (data) {
                                     if(data.status == 'SUCCESS'){

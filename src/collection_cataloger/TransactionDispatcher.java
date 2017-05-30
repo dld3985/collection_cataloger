@@ -2,5 +2,5 @@ package collection_cataloger;
 
 public interface TransactionDispatcher {
 
-	public TransactionResponse handleTransaction(TransactionObject transaction, TransactionResponse transactionResponse);
+	public TransactionResponse getTransaction(RequestObject request, TransactionResponse transactionResponse);
 }
