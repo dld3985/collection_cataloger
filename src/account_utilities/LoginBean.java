@@ -1,4 +1,4 @@
-package beans;
+package account_utilities;
 
 public class LoginBean {
 	private String username, password;

@@ -1,20 +1,23 @@
-package beans;
+package catalog;
 
-public abstract class CatalogItem {
+public class CatalogItem {
 
 	private int catalogItemID;
 	private String name;
 	private String description;
+	private CatalogItemType TYPE;
 
-	public CatalogItem(int catalogItemID, String name, String description) {
-		setValues(catalogItemID, name, description);
+	public CatalogItem(int catalogItemID, String name, String description, CatalogItemType TYPE) {
+		setValues(catalogItemID, name, description, TYPE);
 	}
 
-	private void setValues(int catalogItemID, String name, String description) {
+	private void setValues(int catalogItemID, String name, String description, CatalogItemType TYPE) {
 		setCatalogItemID(catalogItemID);
 		setName(name);
 		setDescription(description);
-	}
+		setTYPE(TYPE);
+	} 
+	
 
 	public int getCatalogItemID() {
 		return catalogItemID;
@@ -40,8 +43,18 @@ public abstract class CatalogItem {
 		this.description = description;
 	}
 
+
+
+	public CatalogItemType getTYPE() {
+		return TYPE;
+	}
+
+	public void setTYPE(CatalogItemType tYPE) {
+		TYPE = tYPE;
+	}
+	
 	@Override
 	public String toString() {
-		return "'" + name + "' : " + "'" + description + "'";
+		return "'" + name + "' : " + "'" + description + "'" + "' : " + "'" + TYPE.toString() + "'";
 	}
 }

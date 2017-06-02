@@ -1,8 +1,10 @@
-package beans;
+package account_utilities;
 
 import java.util.ArrayList;
 
-public class User implements Cloneable{
+import catalog.CatalogImpl;
+
+public class User {
 
 	private String username;
 	private String password;
@@ -12,25 +14,31 @@ public class User implements Cloneable{
 	private String email;
 
 	private ArrayList<AddressBean> addresses;
-	private ArrayList<Catalog> catalogs;
-	
-	private User(){
-		
-	}
+	private ArrayList<CatalogImpl> catalogs;
+	private ProfileState profileState;
+ 
 
 	public User(int userID, String firstName, String lastName, String email, ArrayList<AddressBean> addresses,
-			ArrayList<Catalog> catalogs) {
+			ArrayList<CatalogImpl> catalogs) {
 		setValues(userID, firstName, lastName, email, addresses, catalogs);
 	}
 
 	private void setValues(int userID, String firstName, String lastName, String email,
-			ArrayList<AddressBean> addresses, ArrayList<Catalog> catalogs) {
+			ArrayList<AddressBean> addresses, ArrayList<CatalogImpl> catalogs) {
 		setUserID(userID);
 		setFirstName(firstName);
 		setLastName(lastName);
 		setEmail(email);
 		setAddresses(addresses);
 		setCatalogs(catalogs);
+	}
+
+	public void setProfileState(ProfileState profileState) {
+		this.profileState = profileState;
+	}
+
+	public ProfileState getProfileState() {
+		return profileState;
 	}
 
 	public String getUsername() {
@@ -89,21 +97,17 @@ public class User implements Cloneable{
 		this.addresses = addresses;
 	}
 
-	public ArrayList<Catalog> getCatalogs() {
+	public ArrayList<CatalogImpl> getCatalogs() {
 		return catalogs;
 	}
 
-	public void setCatalogs(ArrayList<Catalog> catalogs) {
+	public void setCatalogs(ArrayList<CatalogImpl> catalogs) {
 		this.catalogs = catalogs;
 	}
-	
+
 	@Override
 	public String toString() {
 		return firstName + " " + lastName + " " + email + " " + addresses.toString() + " " + catalogs.toString();
 	}
-	
-	public Object clone()throws CloneNotSupportedException{  
-		return super.clone();  
-		}  
-}
 
+}

@@ -1,8 +1,8 @@
 package collection_cataloger;
 
+import account_utilities.LoginBean;
 import account_utilities.UserAccountDAO;
 import account_utilities.UserAccountDAOImpl;
-import beans.LoginBean;
 
 /**
  * Dispatcher to handle incoming requests. Requests are in JSON, and should

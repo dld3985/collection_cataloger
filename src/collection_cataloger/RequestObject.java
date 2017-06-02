@@ -1,6 +1,7 @@
 package collection_cataloger;
 
- 
+import catalog.CatalogItemType;
+
 public class RequestObject {
  
 	private String username; 
@@ -10,6 +11,7 @@ public class RequestObject {
 	private int catalogItemID; 
 	private String itemName; 
 	private String itemDescription;
+	private CatalogItemType TYPE;
 
 	public String getUsername() {
 		return username;
@@ -57,6 +59,14 @@ public class RequestObject {
 
 	public void setItemDescription(String itemDescription) {
 		this.itemDescription = itemDescription;
+	}
+
+	public CatalogItemType getTYPE() {
+		return TYPE;
+	}
+
+	public void setTYPE(CatalogItemType tYPE) {
+		TYPE = tYPE;
 	}
 
 }

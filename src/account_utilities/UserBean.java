@@ -1,6 +1,8 @@
-package beans;
+package account_utilities;
 
 import java.util.ArrayList;
+
+import catalog.CatalogImpl;
 
 public class UserBean {
 	private String username;
@@ -10,6 +12,6 @@ public class UserBean {
 	private String firstName;
 	private String lastName;
 	private ArrayList<AddressBean> addresses;
-	private ArrayList<Catalog> catalogs;
+	private ArrayList<CatalogImpl> catalogs;
 
 }

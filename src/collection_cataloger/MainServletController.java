@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import beans.LoginBean;
+import account_utilities.LoginBean;
 
 /**
  * Main servlet that handles all incoming transactions. Validates that the

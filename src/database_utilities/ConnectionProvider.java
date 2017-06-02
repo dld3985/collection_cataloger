@@ -10,6 +10,9 @@ import java.sql.*;
  *
  */
 public class ConnectionProvider {
+	
+	private ConnectionProvider(){}
+	
 	private static Connection con = null;
 	static {
 		try {
