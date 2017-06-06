@@ -8,5 +8,10 @@ public class PublicProfileState implements ProfileState{
 		user.setProfileState(this);	
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "Public Profile";
+	}
 
 }

@@ -2,6 +2,12 @@ package catalog;
 
 import java.util.ArrayList;
 
+/**
+ * Implementation of the CatalogItemIterator for sorting by catalog item type.
+ * 
+ * @author Dan
+ *
+ */
 public class CatalogItemIteratorImpl implements CatalogItemIterator{
 	
 	private CatalogItemType TYPE;

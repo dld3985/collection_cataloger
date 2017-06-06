@@ -26,5 +26,11 @@ public class CatalogImpl implements Catalog{
 	public CatalogItemIterator iterator(CatalogItemType TYPE) { 
 		return new CatalogItemIteratorImpl(TYPE, this.catalogItems);
 	}
+
+	@Override
+	public CatalogItem getCatalogItem(int arrayIndex) {
+		return this.catalogItems.get(arrayIndex);
+		
+	}
 	 
 }
