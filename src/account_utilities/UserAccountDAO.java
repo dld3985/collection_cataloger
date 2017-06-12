@@ -1,5 +1,7 @@
 package account_utilities;
 
+import javax.servlet.http.HttpServletResponse;
+
 import collection_cataloger.RequestObject;
 import collection_cataloger.TransactionResponse;
 
@@ -14,5 +16,6 @@ public interface UserAccountDAO {
 
 	public TransactionResponse validateAccount(RequestObject requestObject, TransactionResponse transactionResponse);
 
-	public TransactionResponse viewCatalog(RequestObject requestObject, TransactionResponse transactionResponse);
+	public TransactionResponse createAccount(RequestObject requestObject, TransactionResponse transactionResponse);
+	 
 }

@@ -8,6 +8,6 @@
 </head>
 <body>
     <a href="login.jsp">login</a>|  
-    <a href="logout.jsp">logout</a>|   
+    <a href="create.jsp">create account</a>|   
 </body>
 </html>

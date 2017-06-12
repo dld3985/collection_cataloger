@@ -1,6 +1,5 @@
 package collection_cataloger;
-
-import account_utilities.LoginBean;
+ 
 import account_utilities.UserAccountDAO;
 import account_utilities.UserAccountDAOImpl;
 
@@ -29,6 +28,11 @@ public class ConcreteTransactionDispatcher implements TransactionDispatcher {
 
 			UserAccountDAO userUtil = new UserAccountDAOImpl();
 			transactionResponse = userUtil.validateAccount(requestObject, transactionResponse);
+		}
+		if (transactionType.equals(TransactionType.CREATE_ACCOUNT.toString())) {
+		 
+			UserAccountDAO userUtil = new UserAccountDAOImpl();
+			transactionResponse = userUtil.createAccount(requestObject, transactionResponse);
 		}
 		return transactionResponse;
 	}

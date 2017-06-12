@@ -25,8 +25,10 @@
                                 dataType: "json",
                                 success: function (data) {
                                     if(data.status == 'SUCCESS'){
-                                    	var url = "Welcome.jsp";    
-                                   	 $(location).attr('href',url); 
+                                     	var returnedUser = data.username;
+                                     	var catalogs = data.catalogs;
+                                    	 $("#welcome").html("Welcome, " + username);
+                                    	 $("#catalogs").html("Catalog Collection:  " + catalogs);
                                     }else if(data.status == 'ERROR'){
                                         alert(data.message);
                                     }
@@ -41,6 +43,13 @@
                 <label>Password</label>
                 <input type="password" id="password"/> 
                 <input type="submit" value="Login" id="login"/>
+                
+            </div>
+            <div>
+            <p id="welcome">Please Log In First</p>
+            </div>
+            <div>
+             <p id="catalogs">[]</p>
             </div>
         </div>
     </div>

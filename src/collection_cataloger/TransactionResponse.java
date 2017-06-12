@@ -5,6 +5,8 @@ public class TransactionResponse {
 	private String message;
 	//will be passed to track a user has successfully logged in. Insecure and just for ease in project implementation
 	private String isLoggedIn;
+	private String catalogs;
+	private String username;
 
 	public String getStatus() {
 		return status;
@@ -23,5 +25,17 @@ public class TransactionResponse {
 	}
 	public void setIsLoggedIn(String isLoggedIn) {
 		this.isLoggedIn = isLoggedIn;
+	}
+	public String getCatalogs() {
+		return catalogs;
+	}
+	public void setCatalogs(String catalogs) {
+		this.catalogs = catalogs;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 }

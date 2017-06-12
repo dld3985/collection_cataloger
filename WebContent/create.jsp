@@ -10,14 +10,14 @@
 <body>
  <div class="loginContainer">
     <div class="block">
-        <h3 class="blockTitle">Login</h3>
+        <h3 class="blockTitle">Create Account</h3>
         <div class="blockContent">
             <div class="formStyle">
                 <script>
-                $(document).on("click", "#login", function() {       
+                $(document).on("click", "#create", function() {       
                             var username=$('#username').val();
                             var password=$('#password').val();
-                            var transaction = "LOGIN"
+                            var transaction = "CREATE_ACCOUNT"
                             $.ajax({
                                 type: "POST",
                                 url:"MainServletController",   // this is my servlet
@@ -25,9 +25,9 @@
                                 dataType: "json",
                                 success: function (data) {
                                     if(data.status == 'SUCCESS'){
-                                    	var url = "Welcome.jsp"; 
-                                    	 
-                                   	$().redirect('url', {'username': username, 'password': password, 'loggedin': 'YES'});
+                                     	var returnedUser = data.username;
+                                     	var catalogs = data.catalogs;
+                                    	 $("#success").html('<a href="login.jsp">LOGIN NOW</a>'); 
                                     }else if(data.status == 'ERROR'){
                                         alert(data.message);
                                     }
@@ -36,16 +36,17 @@
                             });                                
                         }); 
                 </script>
-                
-                Welcome 
-                
                 <label>Username</label>
                 <input type="text" id="username"/> 
 
                 <label>Password</label>
                 <input type="password" id="password"/> 
-                <input type="submit" value="Login" id="login"/>
+                <input type="submit" value="Create Account" id="create"/>
+                
             </div>
+            <div>
+            <p id="success">Please Create Account First</p>
+            </div> 
         </div>
     </div>
  </div>

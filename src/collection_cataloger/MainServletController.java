@@ -39,7 +39,7 @@ public class MainServletController extends HttpServlet {
 	// This will store all received articles
 
 	List<RequestObject> requestObject = new LinkedList<RequestObject>();
-	TransactionResponse transactionResponse = new TransactionResponse();
+	TransactionResponse transactionResponse = new TransactionResponse(); 
 
 	/***************************************************
 	 * URL: /MainServletController doPost(): receives JSON data, parse it, map it and send
@@ -47,14 +47,14 @@ public class MainServletController extends HttpServlet {
 	 ****************************************************/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+	
 		// 1. get received JSON data from request
 		BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
 		String json = "";
 		if (br != null) {
 			json = br.readLine();
 		}
-
+		
 		// 2. initiate jackson mapper
 		ObjectMapper mapper = new ObjectMapper();
 
@@ -63,7 +63,7 @@ public class MainServletController extends HttpServlet {
 
 		// 4. Set response type to JSON
 		response.setContentType("application/json");
-
+		
 		// 5. validate transaction type then send to dispatcher
 
 		if (validateTransaction(requestIn.getRequest().toString())) {

@@ -32,5 +32,10 @@ public class CatalogImpl implements Catalog{
 		return this.catalogItems.get(arrayIndex);
 		
 	}
+	@Override
+	public String toString(){
+		return catalogItems.toString();
+		
+	}
 	 
 }
